@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Employee Directory</h1>
+      <input type="text" id="searchInput" placeholder="Search by name or email" />
+      <button id="searchBtn">Filter</button>
+  </header>
+
+  <section class="controls">
+    <label for="sortSelect">Sort:</label>
+    <select id="sortSelect">
+      <option value="">--Select--</option>
+      <option value="firstName">First Name</option>
+      <option value="department">Department</option>
+    </select>
+    <label for="perPageSelect">Show:</label>
+    <select id="perPageSelect">
+      <option value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    </select>
+    <button id="addEmployeeBtn">Add Employee</button>
+  </section>
+
+  <aside id="filterSidebar" class="sidebar">
+    <h2>Filter Employees</h2>
+    <label>First Name: <input type="text" id="filterFirstName"></label>
+    <label>Department: <input type="text" id="filterDepartment"></label>
+    <label>Role: <input type="text" id="filterRole"></label>
+    <button id="applyFilterBtn">Apply</button>
+    <button id="resetFilterBtn">Reset</button>
+  </aside>
+
+  <main id="employeeList" class="employee-grid">
+    <#list employees as emp>
+      <div class="employee-card" data-id="${emp.id}">
+        <p><strong>ID:</strong> ${emp.id}</p>
+        <p><strong>Name:</strong> ${emp.firstName} ${emp.lastName}</p>
+        <p><strong>Email:</strong> ${emp.email}</p>
+        <p><strong>Department:</strong> ${emp.department}</p>
+        <p><strong>Role:</strong> ${emp.role}</p>
+        <div class="employee-card-actions">
+          <button class="editBtn">Edit</button>
+          <button class="deleteBtn">Delete</button>
+        </div>
+      </div>
+    </#list>
+  </main>
+
+
+  <footer>
+    <p>© 2025 Employee Directory App. All rights reserved.</p>
+  </footer>
+
+  <div id="employeeModal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modalTitle">Add Employee</h2>
+      <form id="employeeForm">
+        <input type="hidden" id="employeeId" />
+        <label>First Name: <input type="text" id="firstName" required></label>
+        <label>Last Name: <input type="text" id="lastName" required></label>
+        <label>Email: <input type="email" id="email" required></label>
+        <label>Department:
+          <select id="department" required>
+            <option value="">Select</option>
+            <option>HR</option>
+            <option>IT</option>
+            <option>Finance</option>
+            <option>Sales</option>
+          </select>
+        </label>
+        <label>Role:
+          <select id="role" required>
+            <option value="">Select</option>
+            <option>Manager</option>
+            <option>Developer</option>
+            <option>Analyst</option>
+            <option>Salesperson</option>
+          </select>
+        </label>
+        <div class="modal-actions">
+          <button type="button" id="cancelBtn">Cancel</button>
+          <button type="submit" id="saveBtn">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
