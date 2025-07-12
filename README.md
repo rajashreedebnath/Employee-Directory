@@ -44,17 +44,16 @@ A responsive, interactive Employee Directory web app built with **HTML**, **CSS*
 
 ## 📸 Screenshots
 
-### 🧑‍💼 Dashboard Page
+### 📊 Dashboard Page
+<img width="958" height="439" alt="Dashboard Page" src="https://github.com/user-attachments/assets/9bc5324c-121c-4802-88c2-072be77e8c6f" />
 
+### 🧑‍💼 Add Employee Form
 
+<img width="959" height="451" alt="Add Employee Form" src="https://github.com/user-attachments/assets/5a1e06fc-c698-47ae-8522-646cefd79fed" />
 
-#### 🧑‍💼 Dashboard Page
+### 🧾 Sidebar Filter
 
-
-
-#### 🧑‍💼 Dashboard Page
-
-
+<img width="959" height="446" alt="Sidebar Filter" src="https://github.com/user-attachments/assets/9431f04b-5790-4ff1-b1a1-fa70c006919a" />
 
 
 ## 🧰 Setup Instructions
@@ -68,7 +67,7 @@ cd Employee-Directory
 
 ### 2. Generate Static HTML
 - Requires Java and freemarker.jar in the root folder
-- ✅ This creates index.html in the root or dist folder.
+- This creates index.html in the root or dist folder.
 
 ```bash
 javac -cp freemarker.jar render.java
